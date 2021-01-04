@@ -1,0 +1,397 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", "Verdana", "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-top-highlight-color: transparent;
+}
+
+div {
+    /*生成怪异盒子,宽度包含内边距和边框*/
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /*flex布局*/
+    display: flex;
+    justify-content: space-around;
+    /*固定定位跟父级没有关系，以屏幕为主*/
+    position: absolute;
+    top: 0px; 
+    /*当宽度是以百分数来进行，居中用以下方法为佳*/
+    left: 50%;
+    transform: translateX(-50%);
+    /*兼容其他浏览器*/
+    -webkit-transform: translateX(-50%);
+    /*固定地位一定要有宽度且margin值是失效的*/
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 45px;
+    background-color: transparent;
+}
+
+.header-search-box {
+    flex: 1;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 8px 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 22px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.header-search-box::before {
+    float: left;
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("./images/home-common-sprite2x@v7.15.png") no-repeat 0px 3px;
+    background-size: 24px auto;
+    margin-left: 6px;
+
+}
+
+a {
+    /*下划线取消*/
+    text-decoration: none;
+    color: #222222;
+    font-size: 12px;
+    /*文本居中*/
+    text-align: center;
+}
+
+.user {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    max-width: 45px;
+    color: white;
+}
+
+/*伪元素*/
+.user::before {
+    /*必须写*/
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    /*切割精灵图，建议下个ps做一些*/
+    background: url("./images/home-common-sprite2x@v7.15.png") no-repeat 0px -41px;
+    background-size: 24px auto;
+    /*间隔一下*/
+    margin: 4px auto 0;
+}
+
+.focus {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.focus img {
+    width: 100%;
+    height: auto;
+    margin-top: -60px;
+}
+
+nav {
+    height: 80px;
+    width: 95%;
+    margin-top: -30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+
+
+}
+
+nav ul li {
+    flex: 1;
+
+}
+
+nav ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li a span[class*='nav-icon'] {
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    margin-top: 8px;
+    background: url('./images/home-fivemain-sprite2x@v7.15.png') no-repeat 0 0;
+    background-size: 40px auto;
+}
+
+nav ul li a span[class='nav-icon-2'] {
+    background-position: 0 -40px;
+}
+
+nav ul li a span[class='nav-icon-3'] {
+    background-position: 0 -80px;
+}
+
+nav ul li a span[class='nav-icon-4'] {
+    background-position: 0 -120px;
+}
+
+nav ul li a span[class='nav-icon-5'] {
+    background-position: 0 -160px;
+}
+
+nav ul li a .nav-span {
+    padding-top: 2px;
+    margin-left: -3px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+main div {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+
+main div .hot {
+    flex: 0.46;
+
+}
+
+main div .hotel {
+    flex: 0.30;
+
+}
+
+main div .home {
+    flex: 0.23;
+
+}
+
+main div .trave,
+main div .plane {
+    flex: 0.30;
+
+}
+
+main div .trainTrave,
+main div .train {
+    flex: 0.23;
+
+}
+
+main div .boatTrave,
+main div .boat {
+    flex: 0.23;
+
+}
+
+main div .selfTrave,
+main div .taix {
+    flex: 0.23;
+
+}
+
+main div div span {
+    padding: 25.6px 0 25.6px 25.6px;
+    font-size: 14px;
+}
+
+main div .hot span {
+    padding: 25.6px 90px;
+}
+
+main div .train span,
+main div .trainTrave span,
+main div .boatTrave span,
+main div .selfTrave span {
+    padding: 25.6px 40px;
+}
+
+.hotel {
+    background: url('./images/grid-nav-items-hotel@v7.15.png') no-repeat 92px 38px;
+    background-size: 73px, auto;
+    background-color: #FB7353;
+}
+
+.home {
+    background: url('./images/grid-nav-items-minsu@v7.15.png') no-repeat 0px 50px;
+    background-size: 37px, auto;
+    background-color: #FC8650;
+}
+
+.hot {
+    background: url('./images/grid-nav-items-hot.png') no-repeat 67px 0px;
+    background-size: 180px, auto;
+    background-color: #FFD152;
+}
+
+.plane {
+    background: url('./images/grid-nav-items-flight@v7.15.png') no-repeat 90px 40px;
+    background-size: 80px, auto;
+    background-color: #4E9DED;
+}
+
+.train {
+    background: url('./images/grid-nav-items-train.png') no-repeat 0px 40px;
+    background-size: 60px, auto;
+    background-color: #4FA7ED;
+}
+
+.boat {
+    background-color: #51B1ED;
+}
+
+.taix {
+    background-color: #53BCED;
+}
+
+.trave {
+    background: url('./images/grid-nav-items-travel@v7.15.png') no-repeat 85px 35px;
+    background-size: 80px, auto;
+    background-color: #45C891;
+}
+
+.trainTrave {
+    background: url('./images/grid-nav-items-dingzhi@v7.15.png') no-repeat 0px 54px;
+    background-size: 65px, auto;
+    background-color: #51CC7E;
+}
+
+.boatTrave {
+    background-color: #5FD06B;
+}
+.selfTrave {
+    background-color: #6BD559;
+}
+
+section{
+    margin-top: 2px;
+    width: 100%;
+}
+.section-ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.section-ul li{
+    height: 55.03px;
+    min-width: 102.6px;
+    max-width: 102.6px;
+    margin-bottom: 5px;
+}
+.section-ul li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-ul li a span[class*='section-icon']{
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    margin-top: 8px;
+    background: url('./images/un_ico_subnav2x@v7.152.png') no-repeat 0 0;
+    background-size: 40px auto;
+}
+.section-ul li a span[class='section-icon-2']{  
+   background-position: 0px -40px;
+}
+.section-ul li a span[class='section-icon-3']{  
+   background-position: 0px -80px;
+}
+.section-ul li a span[class='section-icon-4']{  
+   background-position: 0px -120px;
+}
+.section-ul li a span[class='section-icon-5']{  
+   background-position: 0px -160px;
+}
+.section-ul li a span[class='section-icon-6']{  
+   background-position: 0px -200px;
+}
+.section-ul li a span[class='section-icon-7']{  
+   background-position: 0px -240px;
+}
+.section-ul li a span[class='section-icon-8']{  
+   background-position: 0px -280px;
+}
+.section-ul li a span[class='section-icon-9']{  
+   background-position: 0px -320px;
+}
+.section-ul li a span[class='section-icon-10']{  
+   background-position: 0px -360px;
+}
+.close-footer{
+    display: flex;
+    margin-top: 15px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+.close-footer div{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:20px 0px;
+    cursor: pointer;
+}
+.close-footer div img{
+    width: 40px;
+    height: auto;
+}
+.close-footer div span{
+   margin-top: 8px;
+   font-size: 14px;
+}
+footer{
+    margin-top:8px;
+    display: flex;
+    flex-direction: column;
+}
+.footer-one-line{
+    display: flex;
+    font-size: 15px;
+
+}
+.footer-one-line img{
+    width: 25px;
+    height: auto;
+}
+.footer-two-line{
+    margin: 5px;
+    font-size: 15px;
+}
+.bland{
+    font-size: 14px;
+}
